@@ -1,125 +1,162 @@
-/* Google Font */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Poppins', sans-serif;
+scroll-behavior: smooth;
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #e6e6fa, #f8f9ff);
-    color: #333;
+background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+color: white;
 }
 
-/* Header */
-.header {
-    background: #5a4fcf;
-    color: white;
-    text-align: center;
-    padding: 25px;
-    font-size: 28px;
-    font-weight: 600;
-    letter-spacing: 2px;
+/* HERO SECTION */
+.hero {
+text-align: center;
+padding: 80px 20px;
 }
 
-/* Main Container */
-.container {
-    width: 90%;
-    max-width: 1000px;
-    margin: 40px auto;
-    background: white;
-    display: flex;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+.hero img {
+width: 150px;
+border-radius: 50%;
+border: 4px solid #00f2ff;
+box-shadow: 0 0 20px #00f2ff;
+margin-bottom: 20px;
 }
 
-/* Left Section */
-.left {
-    width: 35%;
-    background: #6c63ff;
-    color: white;
-    padding: 30px 20px;
-    text-align: center;
+.hero h1 {
+font-size: 32px;
 }
 
-.left img {
-    width: 140px;
-    height: 140px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 5px solid white;
-    margin-bottom: 15px;
+.typing {
+color: #00f2ff;
+margin-top: 10px;
+font-weight: 500;
 }
 
-.left h3 {
-    margin: 20px 0 10px;
-    font-size: 18px;
-    border-bottom: 1px solid rgba(255,255,255,0.4);
-    padding-bottom: 5px;
+/* BUTTON */
+.btn {
+display: inline-block;
+margin-top: 20px;
+padding: 10px 25px;
+background: #00f2ff;
+color: black;
+text-decoration: none;
+border-radius: 25px;
+font-weight: bold;
+transition: 0.3s;
 }
 
-.left p, .left li {
-    font-size: 14px;
-    margin: 8px 0;
+.btn:hover {
+background: white;
+transform: scale(1.05);
 }
 
-.left ul {
-    list-style: none;
+/* NAVBAR */
+nav {
+text-align: center;
+background: rgba(0,0,0,0.4);
+padding: 15px;
 }
 
-/* Right Section */
-.right {
-    width: 65%;
-    padding: 30px;
+nav a {
+color: white;
+margin: 0 12px;
+text-decoration: none;
+font-weight: 500;
+transition: 0.3s;
 }
 
-.section {
-    margin-bottom: 25px;
+nav a:hover {
+color: #00f2ff;
 }
 
-.section h3 {
-    font-size: 18px;
-    margin-bottom: 10px;
-    color: #5a4fcf;
-    position: relative;
+/* SECTION */
+section {
+padding: 60px 20px;
+text-align: center;
 }
 
-.section h3::after {
-    content: "";
-    width: 40px;
-    height: 3px;
-    background: #5a4fcf;
-    position: absolute;
-    bottom: -5px;
-    left: 0;
+section h2 {
+margin-bottom: 30px;
+font-size: 26px;
 }
 
-.section p {
-    font-size: 14px;
-    line-height: 1.6;
-    margin-bottom: 8px;
+/* CARD */
+.card {
+background: rgba(255,255,255,0.08);
+margin: 20px auto;
+padding: 25px;
+border-radius: 15px;
+max-width: 600px;
+transition: 0.3s ease;
 }
 
-/* Hover Effect */
-.container:hover {
-    transform: scale(1.01);
-    transition: 0.3s ease-in-out;
+.card:hover {
+transform: translateY(-5px);
+box-shadow: 0 0 20px #00f2ff;
 }
 
-/* Responsive Design */
+/* CONTACT LINKS */
+#contact a {
+color: #00f2ff;
+text-decoration: none;
+}
+
+#contact a:hover {
+text-decoration: underline;
+}
+
+/* SOCIAL LINKS */
+.social {
+margin-top: 15px;
+}
+
+.social a {
+margin: 0 10px;
+color: #00f2ff;
+font-weight: 500;
+text-decoration: none;
+}
+
+.social a:hover {
+text-decoration: underline;
+}
+
+/* FOOTER */
+footer {
+text-align: center;
+padding: 20px;
+background: rgba(0,0,0,0.5);
+font-size: 14px;
+}
+
+/* FADE ANIMATION */
+.fade {
+opacity: 0;
+transform: translateY(30px);
+transition: all 0.8s ease;
+}
+
+.fade.show {
+opacity: 1;
+transform: translateY(0);
+}
+
+/* RESPONSIVE */
 @media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-    }
+.hero h1 {
+font-size: 24px;
+}
 
-    .left, .right {
-        width: 100%;
-    }
+nav a {
+display: inline-block;
+margin: 6px;
+}
 
-    .header {
-        font-size: 22px;
-    }
+.card {
+width: 90%;
+}
+
 }
