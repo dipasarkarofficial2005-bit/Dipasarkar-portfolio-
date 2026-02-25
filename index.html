@@ -1,194 +1,132 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dipa Sarkar | Resume</title>
+<html lang="en">    
+<head>    
+<meta charset="UTF-8">    
+<meta name="viewport" content="width=device-width, initial-scale=1.0">    
+<title>Dipa Sarkar | Portfolio</title>    
+<link rel="stylesheet" href="style.css">    
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">    
+</head>    
 
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+<body>    
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
-}
+<header class="hero">    
+    <img src="dipa.jpg" alt="Dipa Sarkar">    
+    <h1>Dipa Sarkar</h1>    
+    <p><span class="typing"></span></p>    
+    <a href="Dipa_Sarkar_CV.pdf" class="btn" download>Download CV</a>    
+</header>    
 
-body{
-    background:#e9e9ef;
-    padding:40px;
-}
+<nav>    
+    <a href="#about">About</a>    
+    <a href="#education">Education</a>    
+    <a href="#technical">Technical</a>    
+    <a href="#contact">Contact</a>    
+</nav>    
 
-.resume{
-    max-width:1000px;
-    margin:auto;
-    background:#fff;
-    display:flex;
-    box-shadow:0 10px 30px rgba(0,0,0,0.1);
-}
+<section id="about" class="fade">    
+    <h2>About Me</h2>    
+    <div class="card">    
+        <p>    
+            I am Dipa Sarkar, currently pursuing Diploma in Food Processing     
+            Technology at Malda Polytechnic. I am passionate about food     
+            technology, quality control, and food innovation. My goal is     
+            to build a successful career in the food processing industry     
+            and continuously improve my technical skills.    
+        </p>    
+    </div>    
+</section>    
 
-/* LEFT SIDE */
-.left{
-    width:35%;
-    background:#6f67a8;
-    color:white;
-    padding:30px 20px;
-}
+<section id="education" class="fade">    
+    <h2>Education</h2>    
 
-.left img{
-    width:140px;
-    height:140px;
-    border-radius:50%;
-    object-fit:cover;
-    border:5px solid white;
-    display:block;
-    margin:0 auto 15px;
-}
+    <div class="card">    
+        <h3>Diploma in Food Processing Technology</h3>    
+        <p>Malda Polytechnic</p>    
+        <p>3rd Year Student</p>    
+    </div>    
 
-.left h3{
-    background:#5d5597;
-    padding:8px;
-    margin:20px 0 10px;
-    border-radius:5px;
-    font-size:15px;
-}
+</section>    
 
-.left p, .left li{
-    font-size:13px;
-    margin:6px 0;
-}
+<section id="technical" class="fade">    
+    <h2>Department</h2>    
 
-.left ul{
-    padding-left:15px;
-}
+    <div class="card">    
+        <h3>Department of Food Processing Technology</h3>    
+        <p>Malda Polytechnic</p>    
+        <p>Currently in 3rd Year</p>    
+    </div>    
 
-/* RIGHT SIDE */
-.right{
-    width:65%;
-    padding:30px;
-}
+</section>    
 
-.header{
-    background:#6f67a8;
-    color:white;
-    padding:15px;
-    text-align:right;
-    font-size:24px;
-    font-weight:600;
-    margin-bottom:20px;
-}
+<section id="contact" class="fade">    
+    <h2>Contact</h2>    
 
-.section{
-    margin-bottom:20px;
-}
+    <div class="card">    
+        <p>Email: <a href="mailto:yourmail@gmail.com">yourmail@gmail.com</a></p>    
+        <p>Mobile: Your Phone Number</p>    
+    </div>    
 
-.section h3{
-    background:#6f67a8;
-    color:white;
-    padding:8px;
-    font-size:15px;
-    border-radius:5px;
-    margin-bottom:10px;
-}
+</section>    
 
-.section p{
-    font-size:14px;
-    margin-bottom:8px;
-    line-height:1.6;
-}
+<footer>    
+    <p>© 2026 Dipa Sarkar | All Rights Reserved</p>    
+</footer>    
 
-/* Responsive */
-@media(max-width:768px){
-    .resume{
-        flex-direction:column;
-    }
-    .left,.right{
-        width:100%;
-    }
-    .header{
-        text-align:center;
-    }
-}
-</style>
-</head>
+<!-- TYPING ANIMATION SCRIPT -->    
+<script>    
+const textArray = [    
+"Food Processing Technology Student",    
+"3rd Year Diploma Student",    
+"Future Food Technologist",    
+"Passionate About Food Innovation"    
+];    
+    
+let typingElement = document.querySelector(".typing");    
+let textIndex = 0;    
+let charIndex = 0;    
+    
+function typeEffect() {    
+    if (charIndex < textArray[textIndex].length) {    
+        typingElement.textContent += textArray[textIndex].charAt(charIndex);    
+        charIndex++;    
+        setTimeout(typeEffect, 80);    
+    } else {    
+        setTimeout(eraseEffect, 1500);    
+    }    
+}    
+    
+function eraseEffect() {    
+    if (charIndex > 0) {    
+        typingElement.textContent = textArray[textIndex].substring(0, charIndex - 1);    
+        charIndex--;    
+        setTimeout(eraseEffect, 40);    
+    } else {    
+        textIndex++;    
+        if (textIndex >= textArray.length) textIndex = 0;    
+        setTimeout(typeEffect, 300);    
+    }    
+}    
+    
+document.addEventListener("DOMContentLoaded", function () {    
+    setTimeout(typeEffect, 500);    
+});    
+</script>    
 
-<body>
+<!-- SCROLL FADE ANIMATION -->    
+<script>    
+const faders = document.querySelectorAll(".fade");    
+    
+window.addEventListener("scroll", () => {    
+    faders.forEach(section => {    
+        const rect = section.getBoundingClientRect();    
+        if (rect.top < window.innerHeight - 100) {    
+            section.classList.add("show");    
+        }    
+    });    
+});    
+</script>    
 
-<div class="resume">
-
-<!-- LEFT SIDE -->
-<div class="left">
-
-<img src="photo.jpg" alt="Dipa Sarkar">
-
-<h3>Contact</h3>
-<p><strong>Phone:</strong> +91 6296206250</p>
-<p><strong>Email:</strong> dipasarkarofficial2005@gmail.com</p>
-
-<h3>Personal Details</h3>
-<p><strong>DOB:</strong> 18/06/2005</p>
-<p>
-Village: Dhalpara<br>
-Trimohini, Jalpaiguri<br>
-West Bengal, India - 733126
-</p>
-
-<h3>Skills</h3>
-<ul>
-<li>Teamwork</li>
-<li>Time Management</li>
-</ul>
-
-</div>
-
-<!-- RIGHT SIDE -->
-<div class="right">
-
-<div class="header">
-DIPA SARKAR
-</div>
-
-<div class="section">
-<h3>Objective</h3>
-<p>
-To continue my career with an organization that will utilize my 
-management, supervision and administrative skills to benefit 
-mutual growth and success.
-</p>
-</div>
-
-<div class="section">
-<h3>Education</h3>
-<p><strong>2021</strong> – Trimohini Pratap Chandra Uchcha Madhyamik Vidyalaya (W.B.B.S.E.) – 75.42%</p>
-<p><strong>2023</strong> – Muralipur Sanoulla High School – 56.4%</p>
-<p><strong>2023–2026</strong> – Malda Polytechnic (Diploma in Food Processing Technology – Pursuing)</p>
-</div>
-
-<div class="section">
-<h3>Industrial Training</h3>
-<p><strong>Bera Food Products</strong> – 15 Days</p>
-<p><strong>Bengal Beverages Pvt. Ltd.</strong> – 15 Days</p>
-</div>
-
-<div class="section">
-<h3>Additional Details</h3>
-<p>Gender: Female</p>
-<p>Marital Status: Unmarried</p>
-<p>Category: OBC</p>
-<p>Religion: Hinduism</p>
-</div>
-
-<div class="section">
-<h3>Declaration</h3>
-<p>
-I hereby declare that all the above mentioned information are correct and true 
-to the best of my knowledge and belief.
-</p>
-</div>
-
-</div>
-</div>
-
-</body>
+</body>    
 </html>
+
